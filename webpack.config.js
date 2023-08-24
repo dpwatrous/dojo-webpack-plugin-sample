@@ -16,6 +16,7 @@
 const DojoWebpackPlugin = require("dojo-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 var path = require("path");
 var webpack = require("webpack");
@@ -72,7 +73,13 @@ module.exports = env => {
 				/^css!/, function(data) {
 					data.request = data.request.replace(/^css!/, "!style-loader!css-loader!less-loader!")
 				}
-			)
+			),
+
+			new MonacoWebpackPlugin({
+				filename: "[name].worker.js",
+				path: "release",
+				languages: ["json", "python", "shell", "xml", "yaml"]
+			})
 		],
 		resolveLoader: {
 			modules: ["node_modules"]

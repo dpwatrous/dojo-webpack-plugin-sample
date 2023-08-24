@@ -13,6 +13,8 @@
     "dojo-webpack-plugin": "3.0.5",
     "less": "4.1.1",
     "less-loader": "9.0.0",
+    "monaco-editor": "0.41.0",
+    "monaco-editor-webpack-plugin": "7.1.0",
     "style-loader": "2.0.0",
     "url-loader": "4.1.1",
     "webpack": "5.75.0",
